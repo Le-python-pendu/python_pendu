@@ -1,0 +1,22 @@
+
+{% load static %}
+<html>
+     <head>
+       <meta charset="utf-8">
+         <title> Accueil</title>
+         <link rel="stylesheet" href="{% static 'python_pendu/css/style.css' %}" />
+     </head>
+     <body>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+
+        </nav>
+            {% block content %}{% endblock %}
+     </body>
+     <script > console.log(123455)</script>
+     <script src="{% static 'python_pendu/js/index.js' %}"></script>
+
+
+</html>

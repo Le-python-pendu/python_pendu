@@ -1,20 +1,26 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+
 def home(request):
-    return HttpResponse('<h1> Page d\'acceuil </h1>')
+    return render(request, 'python_pendu/home.html')
+
 
 def profil(request):
-    return HttpResponse('<h1> Profil utilisateur</h1>')
+    return render(request, 'python_pendu/profil.html')
+
 
 def registration(request):
-    return HttpResponse('<h1> Inscription </h1>')
+    return render(request, 'python_pendu/registration.html')
+
 
 def connexion(request):
-    return HttpResponse('<h1> Se connecter </h1>')
+    return render(request, 'python_pendu/connexion.html')
+
 
 def history(request):
-    return HttpResponse('<h1> Historique et statistiques </h1>')
+    return render(request, 'python_pendu/history.html')
+
 
 def game(request):
-    return HttpResponse('<h1> Jeu </h1>')
+    return render(request, 'python_pendu/game.html')
