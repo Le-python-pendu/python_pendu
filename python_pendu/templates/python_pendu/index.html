@@ -3,20 +3,31 @@
 <html>
      <head>
        <meta charset="utf-8">
-         <title> Accueil</title>
+         <title> Python Pendu</title>
+         <link rel="stylesheet" href="{% static 'python_pendu/css/bootstrap.min.css' %}" />
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
          <link rel="stylesheet" href="{% static 'python_pendu/css/style.css' %}" />
+
      </head>
      <body>
-        <nav>
-            <ul>
-                <li></li>
-            </ul>
+        <nav class="nav nav-pills nav-fill">
+            <span>
+              <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Accueil</a>
+              <a class="nav-link" href="{% url 'game'%}">Jeux</a>
+              <a class="nav-link" href="{% url 'history'%}">Historique</a>
+
+            </span>
+            <span>
+              <a class="nav-link" href="#">Déconnexion</a>
+
+            </span>
 
         </nav>
             {% block content %}{% endblock %}
      </body>
      <script > console.log(123455)</script>
      <script src="{% static 'python_pendu/js/index.js' %}"></script>
-
+     <script src="{% static 'python_pendu/js/bootstrap.min.js' %}"></script>
+     <script src="https://kit.fontawesome.com/6f4288a67e.js" crossorigin="anonymous"></script>
 
 </html>
