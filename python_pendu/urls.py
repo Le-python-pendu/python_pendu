@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+import dictionary.views
 from . import views
 
 urlpatterns = [
@@ -25,5 +27,7 @@ urlpatterns = [
     path('connexion/', views.connexion, name="connexion"),
     path('game/', views.game, name="game"),
     path('history/', views.history, name="history"),
+    # M4rch
+    path('dictionary', include('dictionary.urls')),
 
 ]
