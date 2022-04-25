@@ -1,6 +1,7 @@
 body{
     background-color:#F5F5F5
-    min-height:500px
+    min-height:500px;
+
 }
 nav{
     background:black;
@@ -8,6 +9,13 @@ nav{
     display:flex;
     flex-direction:row;
     justify-content: space-between;
+
+}
+main{
+    padding:60px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 
 }
 span{
@@ -19,6 +27,9 @@ span img{
 }
 #word{
     display:none
+}
+#pendu{
+    font-size:80px
 }
 #keyboard{
     display:flex;
