@@ -2,6 +2,7 @@ console.log(5899)
 console.log("la vue est chaude")
 let word= document.getElementById('word')
 let pendu= document.getElementById('pendu')
+let err= document.getElementById('err')
 let cont=word.innerHTML
 cont=cont.toUpperCase()
 let arr=cont.split('')
@@ -31,7 +32,7 @@ function shuffleArray(inputArray){
 }
 
 shuffleArray(arr);
-
+let try_2=3
 function addKey(texte){
     console.log(texte)
   key.innerHTML +="<button class='evClick btn btn-primary'>"+texte+"</button>";
@@ -48,6 +49,7 @@ for(let i = 0;i<arr.length;i++){
 }
 let but= document.querySelectorAll('.evClick')
 console.log(but)
+err.innerHTML= "Vous avez le droit à "+ try_2+ " essaie"
 for(let i = 0;i<but.length;i++){
 
     but[i].addEventListener("click", function (event) {
@@ -56,11 +58,13 @@ for(let i = 0;i<but.length;i++){
         let resp=verif.find(element => element == letter)
         if(resp==undefined){
             console.log('faux')
+            try_2 -=1
+            err.innerHTML= "Vous avez le droit à "+ try_2+ " essaie"
             countEr +=1
             console.log(countEr)
 
         if(countEr == 3){
-            console.log("Vous avez perdu");
+            err.innerHTML= "Vous avez perdu LOOOOOOSER"
             countEr=0
         }
 
