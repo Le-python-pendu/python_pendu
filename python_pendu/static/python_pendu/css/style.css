@@ -36,10 +36,13 @@ span img{
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:space-around;
-    padding:5px;
+    background:lightgray;
+    padding:12px;
     width:400px;
     min-height:100px;
-    border: 2px solid red;
+    border: 2px solid dimgray;
+    border-radius:40px;
+    box-shadow: 10px 5px 5px grey;
 
 }
 .btn{

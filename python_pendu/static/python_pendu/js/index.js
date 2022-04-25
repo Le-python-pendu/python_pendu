@@ -3,6 +3,7 @@ console.log("la vue est chaude")
 let word= document.getElementById('word')
 let pendu= document.getElementById('pendu')
 let err= document.getElementById('err')
+let timer= document.getElementById('timer')
 let cont=word.innerHTML
 cont=cont.toUpperCase()
 let arr=cont.split('')
@@ -63,10 +64,10 @@ for(let i = 0;i<but.length;i++){
             countEr +=1
             console.log(countEr)
 
-        if(countEr == 3){
-            err.innerHTML= "Vous avez perdu LOOOOOOSER"
-            countEr=0
-        }
+            if(countEr == 3){
+                err.innerHTML= "Vous avez perdu LOOOOOOSER"
+                countEr=0
+            }
 
         }
         else{
@@ -79,16 +80,54 @@ for(let i = 0;i<but.length;i++){
                 console.log(finPendu[i])
 
             }
+            const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
+            equals(verif, newArr);
+            if(equals(verif, newArr) ==true){
+                err.innerHTML= "Vous avez Gagner"
 
-            console.log('Vrai')
-
+            }
         }
         console.log(newArr)
+
         pendu.innerHTML=newArr.join(' ')
 		console.log(event.target.innerText)
 	}, false);
 
 }
+let sn=0
+let mn=0
+let hn=0
+function time(){
+    sn = sn+1
+
+    if(sn==60){
+        sn=0
+        mn= +1
+    }
+    if(mn==60){
+        mn=0
+        hn= +1
+    }
+    if(hn>0){
+        if(sn<10){
+            timer.innerHTML=hn+":"+mn+":0"+sn
+        }
+        else{
+            timer.innerHTML=hn+":"+mn+":"+sn
+        }
+    }
+    else{
+        if(sn<10){
+            timer.innerHTML=mn+":0"+sn
+        }
+        else{
+            timer.innerHTML=mn+":"+sn
+        }
+
+    }
 
 
+}
+
+setInterval(time,1000)
