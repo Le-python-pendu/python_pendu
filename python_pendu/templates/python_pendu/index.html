@@ -3,26 +3,42 @@
 <html>
      <head>
        <meta charset="utf-8">
-         <title> Accueil</title>
+         <title> Python Pendu</title>
+         <link rel="icon" type="image/png" href="{% static 'python_pendu/img/p32.png' %}" />
+         <link rel="stylesheet" href="{% static 'python_pendu/css/bootstrap.min.css' %}" />
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
          <link rel="stylesheet" href="{% static 'python_pendu/css/style.css' %}" />
+
      </head>
      <body>
+        <nav class="nav nav-pills nav-fill">
+            <span>
+                <img src="{% static 'python_pendu/img/p32.png' %}"/>
+            </span>
+            <span>
+              <a class="nav-link " aria-current="page" href="{% url 'home'%}">Accueil</a>
+              <a class="nav-link" href="{% url 'game'%}">Jeux</a>
+              <a class="nav-link" href="{% url 'history'%}">Historique</a>
 
-        <nav>
+            </span>
+            <span>
+              <a class="nav-link" href="#">Déconnexion</a>
 
-
-            <ul>
-                <li>
-
-                </li>
-            </ul>
-
+            </span>
 
         </nav>
+        <main>
             {% block content %}{% endblock %}
+        </main>
+
+        <footer></footer>
      </body>
      <script > console.log(123455)</script>
      <script src="{% static 'python_pendu/js/index.js' %}"></script>
-
+     <script src="{% static 'python_pendu/js/bootstrap.min.js' %}"></script>
+     <script src="https://kit.fontawesome.com/6f4288a67e.js" crossorigin="anonymous"></script>
 
 </html>
+
+
+
