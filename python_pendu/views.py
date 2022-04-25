@@ -25,7 +25,6 @@ def connexion(request):
 def history(request):
     return render(request, 'python_pendu/history.html')
 
-
 def game(request):
 
 
@@ -34,6 +33,7 @@ def game(request):
 #    res_mot_mystere = Dictionary_t.objects.all()[35:39]
 
     res_mot_mystere = Dictionary_t.objects.get(pk=n)
+    mot_Amanda = Dictionary_t.objects.filter(word__contains=('TOC' or 'TOQU'))
     mot = res_mot_mystere.word
 #     definition = res_mot_mystere.definition
 
@@ -49,4 +49,30 @@ def game(request):
 
 
     return render(request,
-                  'python_pendu/game.html', context={"res_mot_mystere": res_mot_mystere, "mot_mystere": mot, "solution_mot": solution_mot, "index":index, "definition": definition, "len": len_mot, "lista_teste": lista_teste})
+                  'python_pendu/game.html', context={"res_mot_mystere": res_mot_mystere, "mot_mystere": mot, "solution_mot": solution_mot, "index":index, "definition": definition, "len": len_mot, "mot_Amanda": mot_Amanda, "lista_teste": lista_teste})
+
+def game2(request):
+
+
+    len_mot = Dictionary_t.objects.count()
+    n = random.randint(1,len_mot)
+#    res_mot_mystere = Dictionary_t.objects.all()[35:39]
+
+    res_mot_mystere = Dictionary_t.objects.get(pk=n)
+    mot_Amanda = Dictionary_t.objects.filter(word__contains=('TOC' or 'TOQU'))
+    mot = res_mot_mystere.word
+#     definition = res_mot_mystere.definition
+
+    print(">>",type(res_mot_mystere), dir(res_mot_mystere))
+    lista_teste = [1,2,3,4,5,6,7]
+
+
+    #mot=""
+    definition=""
+    solution_mot = res_mot_mystere.word
+    index = res_mot_mystere.definition
+
+
+
+    return render(request,
+                  'python_pendu/game2.html', context={"res_mot_mystere": res_mot_mystere, "mot_mystere": mot, "solution_mot": solution_mot, "index":index, "definition": definition, "len": len_mot, "mot_Amanda": mot_Amanda, "lista_teste": lista_teste})

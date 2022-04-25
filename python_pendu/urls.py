@@ -26,6 +26,7 @@ urlpatterns = [
     path('registration/', views.registration, name="registration"),
     path('connexion/', views.connexion, name="connexion"),
     path('game/', views.game, name="game"),
+    path('game2/', views.game2, name="game2"),
     path('history/', views.history, name="history"),
     # M4rch
     path('dictionary', include('dictionary.urls')),
