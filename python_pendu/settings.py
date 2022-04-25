@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My Apps
     'dictionary',
+    'my_users',
     #'python_pendu',
 ]
 
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+#AUTH_USER_MODEL = 'my_users.Users'
 
 ROOT_URLCONF = 'python_pendu.urls'
 
@@ -59,7 +61,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'python_pendu', 'templates'),
-                 os.path.join(BASE_DIR, 'dictionary', 'templates')],
+                 os.path.join(BASE_DIR, 'dictionary', 'templates'),
+                 os.path.join(BASE_DIR, 'my_users', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
