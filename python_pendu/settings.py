@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My Apps
     'dictionary',
-    #'python_pendu',
+    'python_pendu',
 ]
 
 MIDDLEWARE = [
