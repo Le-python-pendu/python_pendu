@@ -13,6 +13,9 @@ def home(request):
 def profil(request):
     return render(request, 'python_pendu/profil.html')
 
+def level(request):
+    return render(request, 'python_pendu/level.html')
+
 
 def registration(request):
     return render(request, 'python_pendu/registration.html')

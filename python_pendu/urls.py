@@ -22,9 +22,12 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    #Template login
     path('profil/', views.profil, name="profil"),
     path('registration/', views.registration, name="registration"),
     path('connexion/', views.connexion, name="connexion"),
+    # Template game
+    path('level/', views.level, name="level"),
     path('game/', views.game, name="game"),
     path('game2/', views.game2, name="game2"),
     path('history/', views.history, name="history"),

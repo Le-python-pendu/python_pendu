@@ -1,0 +1,19 @@
+
+{% extends 'python_pendu/index.html' %}
+{% load static %}
+{% block content %}
+    <section id="level">
+        <h2>Choisissez votre Niveau</h2>
+        <img src="{% static 'python_pendu/img/coul2.jpg' %}"/>
+        <button type="button" class="easy btn btn-primary">Niveau Couleuvre (Facile)</button>
+        <img src="{% static 'python_pendu/img/python.jpg' %}"/>
+        <button type="button" class="medium btn btn-secondary">Niveau Python (Moyen) </button>
+        <img src="{% static 'python_pendu/img/cobra.jpg' %}"/>
+        <button type="button" class="hard btn btn-success">Niveau Cobra (Difficile)</button>
+        <!--<button type="button" class="btn btn-danger">Niveau Anaconda</button>-->
+
+    </section>
+
+
+
+{% endblock %}

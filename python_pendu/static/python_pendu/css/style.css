@@ -48,6 +48,18 @@ span img{
 .btn{
     margin: 7px
 }
+
+#level{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center
+}
+#level img{
+    width:60px;
+    height:80px;
+    object-fit: contain;
+}
 footer{
     width:100%;
 
