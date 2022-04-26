@@ -3,6 +3,18 @@ if(window.location.pathname=='/level/'){
 
 }
 if(window.location.pathname=='/game/'){
+    if(sessionStorage.getItem('win')==undefined){
+        let gw=0
+        sessionStorage.setItem('win', gw);
+    }
+
+    let data = sessionStorage.getItem('win');
+    if(data ==5){
+        sessionStorage.removeItem('win');
+        console.log("Vous êtes le super vainqueur")
+    }
+    console.log(data)
+    console.log("Nombre de victoire "+data)
     let sn=0
     let mn=0
     let hn=0
@@ -44,10 +56,14 @@ if(window.location.pathname=='/game/'){
 
 
     let word= document.getElementById('word')
+    let tab= document.getElementById('tabW')
     let pendu= document.getElementById('pendu')
     let err= document.getElementById('err')
     let timer= document.getElementById('timer')
     let cont=word.innerHTML
+    tab=tab.innerHTML
+    console.log(cont)
+    console.log(tab)
     cont=cont.toUpperCase()
     let arr=cont.split('')
     let verif=[].concat(arr)
@@ -59,10 +75,9 @@ if(window.location.pathname=='/game/'){
     arr_replace=arr_replace.join(" ")
     console.log(arr_replace)
     pendu.innerHTML=arr_replace
-    let tab=["a",'b','c','d','e','f','g'];
-    tab=tab.join('')
     tab=tab.toUpperCase()
     tab=tab.split('')
+    console.log(tab)
     let key = document.getElementById('keyboard')
 
     let countEr=0
@@ -140,6 +155,14 @@ if(window.location.pathname=='/game/'){
                     timer.style.display = "none";
                     console.log(timeWin)
                     console.log(tt)
+                    let dataW=sessionStorage.getItem('win');
+                    dataW=parseInt(dataW)
+                    console.log(typeof(dataW))
+                    dataW=dataW+1
+                    console.log(dataW)
+                    sessionStorage.setItem('win', dataW);
+                    console.log("Victoire = "+sessionStorage.getItem('win'))
+
                     err.innerHTML= "Vous avez Gagner en   "+tt
 
                 }
