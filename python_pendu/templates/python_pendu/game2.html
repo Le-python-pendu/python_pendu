@@ -1,24 +1,39 @@
 {% extends 'python_pendu/index.html' %}
 
 {% block content %}
-Block content:<br>
-    <h1> Page de jeu </h1>
-<p> Mot mystère : </p>
-<p> Nombre de mots au dictionnaire: {{len}}</p>
-<p>Solution: {{mot_mystere}} / Index: {{index}} </p>
-object: res_mot_mystere:{{res_mot_mystere}}<br>
-request.GET: {{request.GET}}<br>
-copy_mot: {{copy_mot}}<br>
 
-mot_Amanda: {{mot_Amanda}}
-for n in lista_teste:<br>
+<article>
+        <h1> Page de jeu </h1>
+        <!-- Variables -->
+        mot_mystere:{{mot_mystere}}/index:{{index}}/level:{{level}}<br>
+        <br>
+        <div id="content_word">
+            <!-- lettres de la mot mystère sans doublés -->
+            <p id="tab1">tab:{{tab}}</p>
+            <!-- lettres du clavier sans doublés ni dans le mot mystère -->
+            <p id="key1">key:{{key}}</p>
+            <p id="pendu">
 
-{% for n in lista_teste %}
+            </p>
+            <!-- mot mystère cachée -->
+            <p id="word">{{mot_mystere}}</p>
+        </div>
+        <div id="keyboard">
 
-{{n}} <br>
+        </div>
+    </article>
+    <aside>
 
-{%endfor%}
+        <p>
+            ieieieieeieieieieiieieieieieieieieieiieieieieieieieiieieieieie
+        </p>
+        <p id="err">
 
-</p>
-    <a href="{% url 'home'%}">Accueil</a>
+        </p>
+        <p id="timer">
+            0:00
+        </p>
+    </aside>
+
+<a href="{% url 'home'%}">Accueil</a>
 {% endblock %}
