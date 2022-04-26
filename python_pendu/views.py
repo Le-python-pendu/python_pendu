@@ -1,15 +1,16 @@
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from dictionary.models import Dictionary_t
 
 import dictionary, random
 from dictionary import views, models
 
-
+@login_required
 def home(request):
     return render(request, 'python_pendu/home.html')
 
-
+@login_required
 def profil(request):
     return render(request, 'python_pendu/profil.html')
 

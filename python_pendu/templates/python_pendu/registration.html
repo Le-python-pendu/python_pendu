@@ -1,6 +1,12 @@
 {% extends 'python_pendu/index.html' %}
 
 {% block content %}
-    <h1> Page d'enregistrement </h1>
+    <h1> Page d' inscription </h1>
     <a href="{% url 'home'%}">Accueil</a>
+
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >S'inscrire</button>
+    </form>
 {% endblock %}
