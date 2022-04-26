@@ -18,15 +18,36 @@ from django.urls import path, include
 
 import dictionary.views
 from . import views
+from my_users import views as users_views
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeDoneView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     #Template login
     path('profil/', views.profil, name="profil"),
-    path('registration/', views.registration, name="registration"),
-    path('connexion/', views.connexion, name="connexion"),
-    # Template game
+
+    path('registration/', users_views.registration_page, name="registration"),
+    path('connexion/', LoginView.as_view(
+        template_name='python_pendu/connexion.html',
+        redirect_authenticated_user=True
+    ), name="connexion"),
+
+    path('logout/', LogoutView.as_view(
+        template_name='python_pendu/connexion.html',
+    ), name="logout"),
+
+    path('password_change/', PasswordChangeView.as_view(
+    ), name="password_change"),
+
+    path('password_change_done/', PasswordChangeDoneView.as_view(
+    ), name="password_change_done"),
+
+
+      # Template game
     path('game/', views.level, name="level"),
     path('game/<int:level_>/', views.game, name="game"),
     path('game2/', views.game2, name="game2"),

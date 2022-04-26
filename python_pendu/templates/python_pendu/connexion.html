@@ -1,6 +1,14 @@
 {% extends 'python_pendu/index_log.html' %}
 
 {% block content %}
-    <h1> Page de Connexion </h1>
-    <a href="{% url 'home'%}">Accueil</a>
+<h1> Le pyton pendu </h1>
+    <h2> Page de Connexion </h2>
+    <p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Se connecter</button>
+        <p> Pas de compte ? <a href="{% url 'registration'%}">Inscrivez-vous</a></p>
+    </form>
+
 {% endblock %}

@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-#AUTH_USER_MODEL = 'my_users.Users'
+AUTH_USER_MODEL = 'my_users.Users'
 
 ROOT_URLCONF = 'python_pendu.urls'
 
@@ -130,3 +130,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'python_pendu', 'static')]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = 'connexion'
+LOGIN_REDIRECT_URL = 'home'
