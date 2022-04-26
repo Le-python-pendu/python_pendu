@@ -1,5 +1,7 @@
 from django.db import models
 # from django.contrib.auth import authenticate
+from my_users.models import Users
+
 
 
 
@@ -26,7 +28,7 @@ class History_t(models.Model):
     duration = models.FloatField(default=None) # time to find the word
     created_at = models.DateField() # date of the game
     word = models.ForeignKey(Dictionary_t, on_delete=models.PROTECT) #
-    #username = models.ForeignKey(user.models.username, on_delete=models.PROTECT) # gamer's name
+    user_name = models.ForeignKey(Users, on_delete=models.PROTECT) # Users model in my_users
 
     def __str__(self):
         return self.word
