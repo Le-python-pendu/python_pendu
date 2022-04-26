@@ -46,7 +46,6 @@ def game(request, level_):
         if len(mot) < 6 or len(mot) > 10:
             print(n)
             continue
-
         else:
             break
 
