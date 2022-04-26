@@ -5,8 +5,16 @@ if(window.location.pathname=='/level/'){
 }
 
 if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'|| window.location.pathname=='/game/3/'){
+    console.log(window.location.href);
+    console.log(window.location.host);
+    console.log(window.location.hostname);
+    console.log(window.location.pathname);
+    console.log(window.location.protocol);
+    console.log(window.location.protocol+'//'+window.location.host+'/game/');
+    console.log(window.location.port);
 
     if(sessionStorage.getItem('win')==undefined  ){
+    document.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload')
 
         let gw=0
         sessionStorage.setItem('win', gw);
@@ -26,6 +34,7 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
 
     if(data ==5){
         sessionStorage.removeItem('win');
+        location.assign(window.location.protocol+'//'+window.location.host+'/game/')
 
         console.log("Vous êtes le super vainqueur")
     }
@@ -199,8 +208,12 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
                     else{
                         pointU +=80
                     }
+                    let nextW=document.getElementById('nextW')
+                    nextW.style.display = "block";
+
                     sessionStorage.setItem('point', pointU);
                     err.innerHTML= "Vous avez Gagner en   "+tt
+                    nextW.addEventListener("click",() => {console.log("yes we can")})
 
                 }
             }

@@ -1,6 +1,7 @@
 body{
     background-color:#F5F5F5
-    min-height:500px;
+    height:100%;
+    position:relative
 
 }
 nav{
@@ -57,6 +58,9 @@ span img{
     flex-direction:column;
     justify-content:space-around;
     align-items:center
+}
+#nextW{
+    display:none
 }
 #level img{
     width:60px;
