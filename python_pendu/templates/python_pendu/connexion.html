@@ -3,4 +3,13 @@
 {% block content %}
     <h1> Page de Connexion </h1>
     <a href="{% url 'home'%}">Accueil</a>
+
+    <p>{{ message }}</p>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" >Se connecter</button>
+        <p> Pas de compte ? <a href="{% url 'registration'%}">Inscrivez-vous</a></p>
+    </form>
+
 {% endblock %}
