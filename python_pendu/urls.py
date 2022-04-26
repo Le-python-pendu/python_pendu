@@ -27,7 +27,9 @@ from django.contrib.auth.views import PasswordChangeDoneView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    #Template login
     path('profil/', views.profil, name="profil"),
+
     path('registration/', users_views.registration_page, name="registration"),
     path('connexion/', LoginView.as_view(
         template_name='python_pendu/connexion.html',
@@ -45,7 +47,9 @@ urlpatterns = [
     ), name="password_change_done"),
 
 
-    path('game/', views.game, name="game"),
+      # Template game
+    path('game/', views.level, name="level"),
+    path('game/<int:level_>/', views.game, name="game"),
     path('game2/', views.game2, name="game2"),
     path('history/', views.history, name="history"),
     # M4rch

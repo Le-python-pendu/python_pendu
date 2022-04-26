@@ -3,12 +3,14 @@
 {% block content %}
 
     <article>
-        <h1> Page de jeu </h1>
+        <h1> Bienvennue au niveau {{level}}  </h1>
+        <h2 id="findW"></h2>
         <div id="content_word">
             <p id="pendu">
 
             </p>
-            <p id="word">Kellydéch</p>
+            <p id="word">{{mot_mystere}}</p>
+            <p id="tabW">{{tab}}</p>
         </div>
         <div id="keyboard">
 
@@ -17,7 +19,7 @@
     <aside>
 
         <p>
-            ieieieieeieieieieiieieieieieieieieieiieieieieieieieiieieieieie
+            {{index}}
         </p>
         <p id="err">
 
@@ -26,6 +28,7 @@
             0:00
         </p>
     </aside>
+
 
 
 {% endblock %}
