@@ -30,23 +30,27 @@ def history(request):
 
     return render(request, 'python_pendu/history.html')
 
-def game(request):
-    # compte le numbre des mot au dictionnaire
+
+def game(request, level_):
+    level = level_  # recupere le niveau
+    # compte le nombre des mot au dictionnaire
     len_mot = Dictionary_t.objects.count()
     # choisi au azar un mot de 6 a 10 lettres
     state = True
     while state:
         n = random.randint(1, len_mot)
         res_mot_mystere = Dictionary_t.objects.get(pk=n)
+
         mot = res_mot_mystere.word
         if len(mot) < 6 or len(mot) > 10:
             print(n)
             continue
+
         else:
             break
 
     # verifié si exist le niveau
-    if 'level' not in locals() or globals():
+    if 'level_' not in locals():
         level = 1
 
     # remove des lettres doublés
@@ -76,7 +80,6 @@ def game(request):
                   'python_pendu/game.html',
                   context={"mot_mystere": res_mot_mystere.word, "index": res_mot_mystere.definition, "tab": tab,
                            "key": list(key), "level": level})
-
 
 def game2(request):
     # compte le numbre des mot au dictionnaire

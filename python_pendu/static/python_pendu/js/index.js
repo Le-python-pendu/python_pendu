@@ -1,20 +1,46 @@
 if(window.location.pathname=='/level/'){
+    if(sessionStorage.getItem('point') !=undefined ){}
 
 
 }
-if(window.location.pathname=='/game/'){
-    if(sessionStorage.getItem('win')==undefined){
+
+if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'|| window.location.pathname=='/game/3/'){
+
+    if(sessionStorage.getItem('win')==undefined  ){
+
         let gw=0
         sessionStorage.setItem('win', gw);
     }
-
-    let data = sessionStorage.getItem('win');
-    if(data ==5){
-        sessionStorage.removeItem('win');
-        console.log("Vous êtes le super vainqueur")
+    if(sessionStorage.getItem('point')==undefined ){
+        let pt=0
+        sessionStorage.setItem('point', pt);
     }
+    let point = sessionStorage.getItem('point');
+    console.log("Nombre de point :"+point)
+    let data = sessionStorage.getItem('win');
+
     console.log(data)
     console.log("Nombre de victoire "+data)
+    let findW= document.getElementById('findW')
+    findW.innerHTML="Vous avez trouver "+data+"/5 ! "
+
+    if(data ==5){
+        sessionStorage.removeItem('win');
+
+        console.log("Vous êtes le super vainqueur")
+    }
+    let url=window.location.pathname
+    url=url.split('')
+    console.log(url)
+    let urlId=""
+    for(let i=0;i<url.length;i++){
+        let ur= parseInt(url[i])
+        if(Number.isInteger(ur)){
+            urlId=url[i]
+        }
+    }
+    console.log(urlId)
+
     let sn=0
     let mn=0
     let hn=0
@@ -162,7 +188,18 @@ if(window.location.pathname=='/game/'){
                     console.log(dataW)
                     sessionStorage.setItem('win', dataW);
                     console.log("Victoire = "+sessionStorage.getItem('win'))
-
+                     let pointU=sessionStorage.getItem('point');
+                     pointU=parseInt(pointU)
+                     if(urlId==1){
+                        pointU +=20
+                    }
+                    else if(urlId==2){
+                        pointU +=40
+                    }
+                    else{
+                        pointU +=80
+                    }
+                    sessionStorage.setItem('point', pointU);
                     err.innerHTML= "Vous avez Gagner en   "+tt
 
                 }

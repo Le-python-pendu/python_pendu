@@ -63,6 +63,9 @@ span img{
     height:80px;
     object-fit: contain;
 }
+#winner{
+    display:none
+}
 footer{
     width:100%;
 
