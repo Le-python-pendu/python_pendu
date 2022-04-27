@@ -1,16 +1,34 @@
 {% extends 'python_pendu/index.html' %}
-
+{% load static %}
 {% block content %}
    <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
+      <img src="{% static 'python_pendu/img/girafe-avatar.jpg' %}" class="img-fluid rounded-start" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h3 class="card-title text-center">Mon profil</h3>
+          <h4>
+            Pseudo:<br>
+            <small class="text-muted">{{user.user_name}}</small>
+          </h4>
+           <h4>
+            Adresse email:<br>
+            <small class="text-muted">{{user.email}}</small>
+          </h4>
+          <h4>
+            Score:<br>
+            <small class="text-muted">{{user.score}}</small>
+          </h4>
+        <h5> Dernière connexion: <br> <small class="text-muted"> {{user.last_login}}</small></h5>
+
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <a href="{% url 'home'%}" class="btn btn-info" role="button">Retour</a>
+          <a href="{% url 'home'%}" class="btn btn-warning" role="button">Modifier</a>
+          <a href="{% url 'logout'%}" class="btn btn-danger" role="button">Se déconnecter</a>
+        </div>
+      </div>
       </div>
     </div>
   </div>
