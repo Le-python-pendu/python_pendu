@@ -1,5 +1,22 @@
-if(window.location.pathname=='/level/'){
-    if(sessionStorage.getItem('point') !=undefined ){}
+if(window.location.pathname=='/game/'){
+    let wc=sessionStorage.getItem('win')
+    if(sessionStorage.getItem('point') !=undefined && wc=='5'){
+        sessionStorage.getItem('win')
+        let wc=sessionStorage.getItem('win')
+        let pc=sessionStorage.getItem('point')
+        let lv= document.getElementById('level')
+        let winwin= document.getElementById('winner')
+        lv.style.display = "none";
+        let champ= document.getElementById('champ')
+        champ.style.display = "block";
+        champ.innerHTML="Vous avez gagné avec "+wc+" victoires et vous avez cumulé "+ pc +"points"
+        winwin.style.display = "block";
+
+        sessionStorage.removeItem('win');
+        sessionStorage.removeItem('point');
+
+
+    }
 
 
 }
@@ -14,7 +31,6 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
     console.log(window.location.port);
 
     if(sessionStorage.getItem('win')==undefined  ){
-    document.location.replace('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload')
 
         let gw=0
         sessionStorage.setItem('win', gw);
@@ -33,7 +49,7 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
     findW.innerHTML="Vous avez trouver "+data+"/5 ! "
 
     if(data ==5){
-        sessionStorage.removeItem('win');
+
         location.assign(window.location.protocol+'//'+window.location.host+'/game/')
 
         console.log("Vous êtes le super vainqueur")
@@ -210,6 +226,13 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
                     }
                     let nextW=document.getElementById('nextW')
                     nextW.style.display = "block";
+                    let buttonW=sessionStorage.getItem('win');
+
+                    let findU= document.getElementById('findW')
+                    findU.innerHTML="Vous avez trouver "+dataW+"/5 ! "
+                    if(buttonW=="5"){
+                        nextW.innerHTML="RDV pour la Victoire"
+                    }
 
                     sessionStorage.setItem('point', pointU);
                     err.innerHTML= "Vous avez Gagner en   "+tt
