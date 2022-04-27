@@ -1,0 +1,34 @@
+{% extends 'python_pendu/index.html' %}
+
+{% block content %}
+
+    <article>
+        <h1> Bienvennue au niveau {{level}}  </h1>
+        <h2 id="findW"></h2>
+        <div id="content_word">
+            <p id="pendu">
+
+            </p>
+            <p id="word">{{mot_mystere}}</p>
+            <p id="tabW">{{tab}}</p>
+        </div>
+        <div id="keyboard">
+
+        </div>
+    </article>
+    <aside>
+
+        <p>
+            {{index}}
+        </p>
+        <p id="err">
+
+        </p>
+        <p id="timer">
+            0:00
+        </p>
+    </aside>
+
+
+
+{% endblock %}
