@@ -2,5 +2,20 @@
 
 
 {% block content %}
-    <h1> Page d'accueil </h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    <h3>Bonjour {{user.user_name}}</h3>
+    </div>
+      <div class="card-body">
+        <h5 class="card-title">Bienvenu sur le python Pendu</h5>
+        <p class="card-text">Le but du jeu est simple: tu dois deviner le maximum de mot à partir d'une définition. </p>
+        <p class="card-text">Bonne chance à toi ☺️🐍  </p>
+        <a href="{% url 'level'%}" class="btn btn-success">Nouvelle partie</a>
+      </div>
+    <div class="card-footer text-muted">
+
+  </div>
+</div>
+
 {% endblock %}
