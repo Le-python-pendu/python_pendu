@@ -37,7 +37,7 @@ urlpatterns = [
     ), name="connexion"),
 
     path('logout/', LogoutView.as_view(
-        template_name='python_pendu/home.html',
+        next_page='connexion',
     ), name="logout"),
 
     path('password_change/', PasswordChangeView.as_view(
