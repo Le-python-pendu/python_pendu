@@ -1,12 +1,22 @@
 {% extends 'python_pendu/index_log.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-    <h1> Page d' inscription </h1>
-    <a href="{% url 'home'%}">Accueil</a>
+<div class="card">
+  <div class="card-header text-center">
+    <h3>Inscription</h3>
+    </div>
+      <div class="card-body">
+         <form method="post" class="row g-3" >
+             <div class="col-md-12">
+              {% csrf_token %}
+              {{ form|crispy }}
+                <button type="submit" class="btn btn-success">Inscription</button>
+              </div>
+        </form>
+      </div>
+    <div class="card-footer text-muted">
+        <p> Déjà inscrit  ? <a href="{% url 'connexion'%}">Connectez-vous</a></p>
 
-    <form method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <button type="submit" >S'inscrire</button>
-    </form>
+  </div>
+</div>
 {% endblock %}
