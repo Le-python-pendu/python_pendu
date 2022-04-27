@@ -1,5 +1,5 @@
 body{
-    background-color:#F5F5F5
+    background-color:#F5F5F5;
     height:100%;
     position:relative
 
@@ -15,6 +15,25 @@ nav{
     justify-content: space-between;
 
 }
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th,td{
+    border-spacing : 5px 10px;
+    color:white;
+    text-align:center;
+    padding:5px
+}
+th{
+    color:red
+}
+table{
+    background:black;
+    width:100%;
+
+}
+
 main{
     padding:60px;
     min-height:900px;

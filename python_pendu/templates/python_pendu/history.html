@@ -1,5 +1,46 @@
 {% extends 'python_pendu/index.html' %}
 
 {% block content %}
-    <h1> Page d'history </h1>
+    <section>
+         <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Historique des plus hauts Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nom du joueur</td>
+                    <td>Score</td>
+                    <td>Temps total</td>
+                    <td>Niveau</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Aucun joueur au Palmarès des puissants</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+         <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Mot Le plus souvent joué</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nom du mot</td>
+                    <td>Nombre de fois</td>
+                    <td>Temps min trouvé</td>
+                    <td>Temps max trouvé</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Aucun mot rentré dans la boucle du python</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+
 {% endblock %}

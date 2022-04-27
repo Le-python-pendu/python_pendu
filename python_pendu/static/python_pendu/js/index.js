@@ -145,7 +145,7 @@ if(window.location.pathname=='/game/1/'|| window.location.pathname=='/game/2/'||
     let try_2=3
     function addKey(texte){
         console.log(texte)
-      key.innerHTML +="<button class='evClick btn btn-primary'>"+texte+"</button>";
+      key.innerHTML +="<button class='evClick btn btn-success'>"+texte+"</button>";
     }
     function getAllIndexes(arr, val) {
         var indexes = [], i;
